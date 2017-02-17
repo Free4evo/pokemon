@@ -64,6 +64,10 @@ let app = new Vue
 	methods,
 	mounted()
 	{
+
+		if (document.body.scrollHeight<screen.height){
+                this.loadMore()
+            }
 		new IntersectionObserver(entries =>
 		{
 			if (isVisible) this.loadMore()
@@ -71,5 +75,3 @@ let app = new Vue
 		.observe(this.$refs.loadButton)
 	},
 })
-
-
