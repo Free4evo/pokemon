@@ -1,0 +1,21 @@
+[v-cloak] { display: none }
+
+#app{
+    display: flex;
+    flex-direction: row;
+    max-width: 1024px;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.detInf{
+    position: fixed;
+    left: 50%;
+}
+
+td{
+    text-transform: uppercase;
+}
+
+
+

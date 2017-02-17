@@ -1,0 +1,46 @@
+<!doctype html>
+
+<meta charset=utf-8>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<main id=app v-cloak>
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Add</th>
+                <th>Del</th>
+            </tr>
+            <tr v-for="(pokemon, index) in pokemons">
+                <td>{{ pokemon.name }}</td>
+                <td><button @click="loadDetails(pokemon.url)">+</button></td>
+                <td><button @click="removePokemon(index)">x</button></td>
+            </tr>
+        </table>
+        <progress v-bind:hidden="!details.loading"></progress>
+        <button ref=loadButton @click="loadMore">
+            <progress v-bind:hidden="!loading"></progress>
+            Load more
+        </button>
+    </div>
+    <div class="detInf">
+        <article v-bind:hidden="!details.open">
+            <h1>
+                <button @click="details.open = false">x</button>
+                Details on {{ details.name }} #{{ details.id }}
+            </h1>
+
+            <p>Weight: {{ details.weight }}
+            <p>Height: {{ details.height }}
+            <p>Exp: {{ details.base_experience }}
+            <p>Order: {{ details.order }}
+        </article>
+    </div>
+</main>
+
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="http://iamdustan.com/smoothscroll/src/smoothscroll.js"></script>
+<script src="script.js"></script>
+
