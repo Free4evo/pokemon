@@ -66,8 +66,10 @@ let app = new Vue
 	{
 		new IntersectionObserver(entries =>
 		{
-			if (entries.some(isVisible)) this.loadMore()
+			if (isVisible) this.loadMore()
 		})
 		.observe(this.$refs.loadButton)
 	},
 })
+
+

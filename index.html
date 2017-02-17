@@ -4,8 +4,8 @@
 
 <link rel="stylesheet" type="text/css" href="style.css">
 
-<main id=app v-cloak>
-    <div>
+<main id=app>
+    <div v-cloak>
         <table>
             <tr>
                 <th>Name</th>
@@ -24,7 +24,7 @@
             Load more
         </button>
     </div>
-    <div class="detInf">
+    <div class="detInf" v-cloak>
         <article v-bind:hidden="!details.open">
             <h1>
                 <button @click="details.open = false">x</button>
